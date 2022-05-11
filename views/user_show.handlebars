@@ -1,0 +1,13 @@
+<div class="card mt-2" style="width: 40rem;">
+  <div class="card-body">
+    <p>@{{user.username}}</p>
+  </div>
+
+  {{#if isOwner}}
+    <h5>your account</h5>
+  {{/if}}
+</div>
+
+<div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 mt-5">
+  {{> posts}}
+</div>

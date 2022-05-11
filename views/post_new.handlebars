@@ -1,0 +1,21 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <form class="" action="/posts" enctype="multipart/form-data" method="POST">
+      <fieldset>
+        <legend>New Post</legend>
+        <input class="mb-2" type="text" name="title" placeholder="Title" required><br>
+
+        <div class="mb-3">
+          <label for="formFileSm" class="form-label">Thumbnail Image</label>
+          <input type="file" class="form-control form-control-sm" name="filename" required>
+        </div>
+
+        <textarea class="mb-1" name="summary" rows="5" cols="25" placeholder="Describe your food/snack..." required></textarea><br>
+
+        <input class="mb-2" name="category" type="text" id="post-category" placeholder="Category" required><br>
+
+        <input type="submit" value="Create Post">
+      </fieldset>
+    </form>
+  </div>
+</div>

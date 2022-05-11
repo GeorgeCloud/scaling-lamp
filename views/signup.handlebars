@@ -1,0 +1,32 @@
+<title>Reddit | Sign Up</title>
+
+<h1>Sign Up</h1>
+<p>By continuing, you are setting up a Reddit account and agree to our
+  <span style="color: blue;">User Agreement</span> and
+  <span style="color: blue;">Privacy Policy</span>.</p>
+
+<div class="card" style="width: 50%;">
+  <div class="card-header">
+    Lots of cool stuff. Signup now!
+  </div>
+  <div class="card-body">
+    <!-- <h5 class="card-title">Hello World</h5> -->
+    <p class="card-text">
+      <form action="/signup" method="POST">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <div class="input-group">
+            <div class="input-group-text">@</div>
+            <input type="text" name="username" class="form-control" id="username">
+          </div>
+          <div class="form-text">This username should be unique.</div>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="password">
+        </div>
+        <button type="submit" class="btn btn-primary">Signup</button>
+      </form>
+    </p>
+  </div>
+</div>

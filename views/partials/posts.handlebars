@@ -1,0 +1,29 @@
+{{#each posts}}
+  <div class="col">
+    <div class="card text-center p-3 border bg-light">
+      <img src="/images/{{this.imagePath}}" class="card-img-top" style="height:13rem;" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">{{this.summary}}</p>
+        <a href="/posts/{{this._id}}" class="btn btn-primary">Visit Post</a>
+      </div>
+
+
+
+      <div class="card-footer text-muted">
+        <p class="p-0 m-0">
+          {{this.voteScore}}
+        </p>
+
+        <div style="display: flex; justify-content: space-evenly">
+          <form class="vote-up" data-id="{{this._id}}">
+            <button type="submit" style="width:3rem;" class="btn btn-secondary">+</button>
+          </form>
+          <form class="vote-down" data-id="{{this._id}}">
+            <button type="submit" style="width:3rem;" class="btn btn-dark">-</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}

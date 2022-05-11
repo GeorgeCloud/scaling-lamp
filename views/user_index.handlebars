@@ -1,0 +1,15 @@
+<title>Foody</title>
+
+<div class="container">
+  <h3 class="text-center">All Users</h3>
+
+  {{#if currentUser}}
+    <a href="/posts/new">Create new post</a>
+  {{/if}}
+
+  <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+    {{#each users}}
+      {{> user}}
+    {{/each}}
+  </div>
+</div>

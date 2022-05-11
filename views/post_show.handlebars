@@ -1,0 +1,51 @@
+<div class="card mt-2" style="width: 40rem;">
+  <img src="/images/{{post.imagePath}}" class="card-img-top" style="height:25rem;" alt="Post Image">
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <p class="card-text">{{post.summary}}</p>
+    <p>@{{post.username}}</p>
+    <p>
+      <i>#{{post.category}}</i>
+    </p>
+  </div>
+
+  {{#if isOwner}}
+    <div class="card-body" style="display: flex; justify-content: flex-end;">
+      <form class="" action="/posts/{{post._id}}/edit" method="GET" style="margin-right: 5px;">
+        <button type="button" class="btn btn-warning">Edit</button>
+      </form>
+
+      <form class="" action="/posts/{{post._id}}/delete" method="POST">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+  {{/if}}
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      {{#if currentUser}}
+        <form class="" action="/posts/{{post._id}}" method="POST">
+          <textarea name="content" rows="4" cols="80"
+            style="width: 100%; height: 0%;" placeholder="Reply to thread..."></textarea>
+
+          <div style="display: flex; justify-content: flex-end;">
+            <button class="btn btn-primary" type="submit">Comment</button>
+          </div>
+        </form>
+      {{else}}
+        <p class="fw-lighter">To comment signin.</p>
+      {{/if}}
+    </li>
+
+    {{#each post.comments}}
+      <li class="list-group-item">
+        {{this.content}}<br>
+        <span class="m-2">@{{this.username}}</span>
+
+        {{#if currentUser}}
+          {{> new_comment}}
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
