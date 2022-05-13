@@ -58,7 +58,7 @@ app.get('/r/:category', async (req, res) => {
   const category = req.params.category
 
   Post.find({ category: category }).lean()
-    .then((posts) => res.render('category', { posts, user }))
+    .then((posts) => res.render('category', { posts, user, category }))
     .catch((err) => {
       console.log(err);
     });

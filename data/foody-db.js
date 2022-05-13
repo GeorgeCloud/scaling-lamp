@@ -1,7 +1,7 @@
 /* Mongoose Connection */
 const mongoose = require('mongoose');
 const assert   = require('assert');
-const url      = process.env.MONGODB_URI || process.env.MONGODB_URL;
+const url      = (process.env.MONGODB_URI || process.env.MONGODB_URL);
 
 mongoose.connect(
   url, {useNewUrlParser: true, useUnifiedTopology: true},
